@@ -1,6 +1,6 @@
 # Deformable Mirror FEM Analysis for Zernike Mode Reproduction (Atmospheric correction)
 
-This repository contains the numerical framework developed to evaluate the mechanical performance of a deformable (adaptive) mirror (DM) in reproducing optical Zernike modes using finite element analysis (FEA). The code implements the forward and inverse modeling of a pin-actuated deformable mirror and provides quantitative metrics of surface fitting accuracy.
+This repository contains the numerical framework developed to evaluate the mechanical performance of a deformable (adaptive) mirror (DM) in reproducing optical Zernike modes using finite element analysis (FEM). The code implements the forward and inverse modeling of a pin-actuated deformable mirror and provides quantitative metrics of surface fitting accuracy.
 
 The framework is based on a parametric, physics-driven approach and was developed as part of the numerical work supporting a peer-reviewed [study](https://opg.optica.org/abstract.cfm?URI=AOPT-2024-OTh1F.2) on deformable mirror design for adaptive optics applications.
 
@@ -22,3 +22,27 @@ The deformable mirror is modeled as a thin circular plate actuated by an array o
 This implementation focuses on the mechanical response and Zernike mode fitting accuracy of the deformable mirror. Optimization routines used in the associated publication are not included in this repository.
 
 ---
+## Requirements
+
+FreeCAD 0.21.2 ((please note that some features may differ in more recent versions))
+CalculiX (via FreeCAD FEM tools)
+Python 
+
+All simulations are executed within the Macro FreeCAD (Python) environment.
+
+## Running the FEM Analysis in FreeCAD
+
+1.Place the next files in your working directory: 
+
+FEM_main.FCMacro
+fem_analysis.py
+mirror_geometry.py
+zernike.py
+
+2. Running the Macro
+
+-Launch FreeCAD
+-Open the Macro dialog:
+-Macro → Macros…
+-Select FEM_main.FCMacro
+-Click Execute
