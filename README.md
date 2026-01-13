@@ -32,7 +32,9 @@ This implementation focuses on the mechanical response and Zernike mode fitting 
 ## Requirements
 
 FreeCAD 0.21.2 ((please note that some features may differ in more recent versions))
+
 CalculiX (via FreeCAD FEM tools)
+
 Python 
 
 All simulations are executed within the Macro FreeCAD (Python) environment.
@@ -42,14 +44,21 @@ All simulations are executed within the Macro FreeCAD (Python) environment.
 1.Place the next files in your working directory: 
 
 FEM_main.FCMacro
+
 fem_analysis.py
+
 mirror_geometry.py
+
 zernike.py
 
 2. Running the Macro
 
 -Launch FreeCAD
+
 -Open the Macro dialog:
+
 -Macro → Macros…
+
 -Select FEM_main.FCMacro
+
 -Click Execute
