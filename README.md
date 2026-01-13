@@ -52,7 +52,7 @@ fem_analysis.py
 
 mirror_geometry.py
 
-zernike.py
+zernike_utils.py
 
 
 2. Running the Macro
