@@ -39,7 +39,10 @@ Python
 
 All simulations are executed within the Macro FreeCAD (Python) environment.
 
+---
+
 ## Running the FEM Analysis in FreeCAD
+
 
 1.Place the next files in your working directory: 
 
@@ -50,6 +53,7 @@ fem_analysis.py
 mirror_geometry.py
 
 zernike.py
+
 
 2. Running the Macro
 
