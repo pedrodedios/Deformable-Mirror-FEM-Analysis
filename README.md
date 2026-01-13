@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="FEM_data/DM.png" width="450" style="display:inline-block; margin-right:20px;">
+  <img src="FEM_data/DM.png" width="410" style="display:inline-block; margin-right:20px;">
   <img src="FEM_data/quadrafoil.jpg" width="400" style="display:inline-block;">
 </p>
 
