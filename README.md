@@ -1,7 +1,8 @@
 # Deformable Mirror FEM Analysis for Zernike Mode Reproduction (atmospheric correction)
 
-
-![Deformable mirror FEM setup](FEM_data/trefoil.jpg)
+<p align="center">
+  <img src="figures/FEM_data/trefoil.jpg" width="300">
+</p>
 
 This repository contains the numerical framework developed to evaluate the mechanical performance of a **deformable** (adaptive) **mirror** (DM) in reproducing optical **Zernike modes** using finite element analysis (**FEM**) implemented in **FreeCAD**. The code implements the forward and inverse modeling of a pin-actuated deformable mirror and provides quantitative metrics of surface fitting accuracy.
 
