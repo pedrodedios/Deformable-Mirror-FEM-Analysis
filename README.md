@@ -11,12 +11,19 @@ The framework is based on a parametric, physics-driven approach and was develope
 The deformable mirror is modeled as a thin circular plate actuated by an array of plungers arranged in configurable polar layouts. For a given actuator configuration and mirror geometry, the code:
 
 -Generates a fully parametric 3D model of the mirror and actuators in FreeCAD
+
 -Sets up and solves a mechanical FEM problem using CalculiX
+
 -Computes Actuator Influence Functions (AIFs) via unit force excitation
+
 -Constructs the AIF matrix and computes its Moore–Penrose pseudo-inverse
+
 -Projects target Zernike modes (Noll indexing) onto the actuator basis
+
 -Applies the resulting actuator forces and evaluates the mirror deformation
+
 -Quantifies performance using RMS and peak residual surface errors
+
 -Exports nodal displacement data for post-processing and visualization
 
 This implementation focuses on the mechanical response and Zernike mode fitting accuracy of the deformable mirror. Optimization routines used in the associated publication are not included in this repository.
