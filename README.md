@@ -31,7 +31,7 @@ This implementation focuses on the mechanical response and Zernike mode fitting 
 ---
 ## Requirements
 
-FreeCAD 0.21.2 ((please note that some features may differ in more recent versions))
+FreeCAD 0.21.2 (please note that some features may differ in more recent versions)
 
 CalculiX (via FreeCAD FEM tools)
 
