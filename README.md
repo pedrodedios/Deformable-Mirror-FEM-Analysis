@@ -1,4 +1,4 @@
-# Deformable Mirror FEM Analysis for Zernike Mode Reproduction (Atmospheric correction)
+# Deformable Mirror FEM Analysis for Zernike Mode Reproduction (atmospheric correction)
 
 This repository contains the numerical framework developed to evaluate the mechanical performance of a deformable (adaptive) mirror (DM) in reproducing optical Zernike modes using finite element analysis (FEM). The code implements the forward and inverse modeling of a pin-actuated deformable mirror and provides quantitative metrics of surface fitting accuracy.
 
