@@ -1,0 +1,106 @@
+"""
+Main execution script for deformable mirror FEM analysis.
+
+This script initializes a FreeCAD document and runs a finite element
+analysis (FEM) of a deformable mirror (DM) actuated by discrete plungers.
+The analysis evaluates how accurately the DM can reproduce specified
+Zernike modes using inverse wavefront reconstruction based on actuator
+influence functions.
+
+The script serves as the entry point for the numerical framework and
+defines all geometric, mechanical, and optical parameters passed to
+`run_fem_analysis`.
+"""
+
+
+
+
+import FreeCAD as App
+import Part
+import Fem
+import ObjectsFem
+import numpy as np
+import math
+from femtools import ccxtools
+
+
+from fem_analysis import run_fem_analysis
+from zernike_utils import zernike_radial, noll_to_nm, zernike_noll, zernike_noll, rms 
+
+
+
+
+
+
+# --------------------
+# Analysis parameters
+# --------------------
+
+# FreeCAD document used for geometry creation and FEM analysis
+doc = App.newDocument("Deformable_Mirror")
+
+# Mechanical parameters (all units in mm unless stated otherwise)
+r_mech    = 100.0   # Outer mechanical radius of the mirror support
+r_mirror  = 95.0    # Optical mirror radius
+h_mirror  = 2.0     # Mirror thickness
+
+# Plunger (actuator) geometry
+r1_plunger = 1.2    # Major radius of plunger cross-section
+r2_plunger = 1.2    # Minor radius of plunger cross-section
+h_plunger  = 4.0    # Height of the plunger extrusion
+
+# FEM mesh parameter
+mesh_size = 6       # Maximum element size for Netgen mesh
+
+# Zernike modes to analyze
+# Each entry: [Noll index, % amplitude (unit = 250 nm)]
+set_modes_noll = [
+    [4, 1.0],        # Example: defocus mode, 
+    [6, 1.0],        # Example: astigmatism mode
+]
+
+# Optical parameters
+CA = 50.0           # Clear aperture radius for wavefront evaluation
+
+# Actuator test force used to build the AIF matrix
+force_test = 1.0    # Unit force applied to each plunger (arbitrary units)
+
+# Actuator (plunger) coordinate positions in the mirror plane (x, y)
+positions = [
+    [0.0, 0.0],          # Central actuator
+    [85.0, 0.0], 
+    [68.77, 49.96], 
+	[26.27, 80.84], 
+	[-26.27, 80.84],
+	[-68.77, 49.96], 
+	[-85.0, 0.0],
+	[-68.77, -49.96],
+	[-26.27, -80.84], 
+	[26.27, -80.84], 
+	[68.77, -49.96]
+	]
+
+
+
+
+
+
+# main execution
+rms_mean, data_modes = run_fem_analysis(
+    doc=doc,
+    r_mech=r_mech,
+    r_mirror=r_mirror,
+    h_mirror=h_mirror,
+    r1_plunger=r1_plunger,
+    r2_plunger=r2_plunger,
+    h_plunger=h_plunger,
+    mesh_size=mesh_size,
+    set_modes_noll=set_modes_noll,
+    CA=CA,
+    force_test=force_test,
+    positions=positions
+)
+
+
+
+
