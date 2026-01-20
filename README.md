@@ -6,8 +6,10 @@
   <img src="FEM_data/quadrafoil.jpg" width="400" style="display:inline-block;">
 </p>
 
+This repository contains a numerical framework for evaluating the mechanical performance of a **deformable** (adaptive) **mirror** (DM) in reproducing optical **Zernike modes**. The framework uses finite element analysis (**FEM**)  implemented in  **FreeCAD** to model mirror deformation.
 
-This repository contains the numerical framework developed to evaluate the mechanical performance of a **deformable** (adaptive) **mirror** (DM) in reproducing optical **Zernike modes** using finite element analysis (**FEM**) implemented in **FreeCAD**. The code implements the forward and inverse modeling of a pin-actuated deformable mirror and provides quantitative metrics of surface fitting accuracy.
+The project serves as a foundational approach for developing reliable deformable mirrors capable of correcting **atmospheric aberrations**. The code supports both forward and inverse modeling of a pin-actuated deformable mirror and provides quantitative metrics to assess surface fitting accuracy.
+
 
 The framework is based on a parametric, physics-driven approach and was developed as part of the numerical work supporting a peer-reviewed [study](https://opg.optica.org/abstract.cfm?URI=AOPT-2024-OTh1F.2) on deformable mirror design for adaptive optics applications.
 
